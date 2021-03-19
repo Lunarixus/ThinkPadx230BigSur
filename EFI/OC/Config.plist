@@ -1606,9 +1606,9 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string></string>
+			<string>C02224310GUF1YJJA</string>
 			<key>ProcessorType</key>
-			<integer>0</integer>
+			<integer>1540</integer>
 			<key>ROM</key>
 			<data></data>
 			<key>SpoofVendor</key>
@@ -1616,11 +1616,11 @@
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>MacBookPro10,2</string>
+			<string>MacBookPro9,2</string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>C02HV2Z7DTY3</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>5C9FCC23-8442-491B-AD04-E14A97BE0385</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
