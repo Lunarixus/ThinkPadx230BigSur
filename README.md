@@ -1,10 +1,8 @@
 # ThinkPad X230 MacOS with OpenCore
 
-MacOS (Currently Catalina `10.15.7` and Big Sur `11.2`) working on ThinkPad X230
+MacOS (Currently Big Sur) working on ThinkPad X230
 
-**Status: Work In Progress**
-
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.6-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2-purple.svg)](https://www.apple.com/macos/big-sur/)
+**Status: Stable**
 
 **DISCLAIMER:** Read the entire README before you start. I am not responsible for any damages you may cause.
 
@@ -17,13 +15,13 @@ MacOS (Currently Catalina `10.15.7` and Big Sur `11.2`) working on ThinkPad X230
 | :------------------ | :------------------------------------------ |
 | Computer model      | Lenovo ThinkPad X230 (Type: 2325)           |
 | Processor           | Intel Core i5-3380M (2C4T, 2.9/3.6Ghz, 3MB) |
-| Memory              | Crucial 16GB DDR3L 1600MHz, dual-channel    |
-| Hard Disk           | Samsung 860 Evo 250GB                       |
+| Memory              | Crucial 8GB DDR3L 1600MHz, dual-channel     |
+| Hard Disk           | SanDisk SSD Plus 120GB                      |
 | Integrated Graphics | Intel HD Graphics 4000                      |
 | Display             | 12.5" HD (1366x768) IPS                     |
 | Audio               | Realtek ALC3202 (Layout-id: `18`)           |
 | Ethernet            | Intel 82579LM Gigabit Network Connection    |
-| WIFI+BT             | AzureWave AW-CE123H (BCM94352HMB)           |
+| WIFI+BT             | Dell DW1510 (BCM4322 in macOS)              |
 | Keyboard            | 7-row classic, multimedia Fn keys,          |
 | Dock                | ThinkPad Mini Dock Plus Series 3            |
 
@@ -46,37 +44,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 | Component      | Version |
 | :------------- | :------ |
 | MacOS Big Sur  | 11.2    |
-| MacOS Catalina | 10.15.7 |
 | OpenCore       | 0.6.6   |
-
-</details>
-
-<details>
-<summary><strong>Kernel extensions</strong></summary>
-
-| Kext                | Version |
-| :------------------ | :------ |
-| AirportBrcmFixup    | 2.1.1   |
-| AppleALC            | 1.5.7   |
-| BrcmPatchRAM        | 2.5.5   |
-| EFICheckDisabler    | 0.5.0   |
-| IntelMausi          | 1.0.5   |
-| Lilu                | 1.5.1   |
-| USBInjectAll        | 0.7.1   |
-| VirtualSMC          | 1.2.0   |
-| VoodooPS2Controller | 2.2.1   |
-| WhateverGreen       | 1.4.7   |
-
-</details>
-
-<details>
-<summary><strong>UEFI drivers</strong></summary>
-
-| Driver          | Version           |
-| :-------------- | :---------------- |
-| OpenHfsPlus.efi | OpenCorePkg 0.6.6 |
-| OpenCanopy.efi  | OpenCorePkg 0.6.6 |
-| OpenRuntime.efi | OpenCorePkg 0.6.6 |
 
 </details>
 
@@ -121,8 +89,7 @@ For setting up the SMBIOS info, use [GenSMBIOS](https://github.com/corpnewt/GenS
 
 - Run GenSMBIOS, pick option 1 for downloading MacSerial and Option 3 for selecting out SMBIOS
 
-  - MacBookPro10,2
-  - MacBookPro11,5 (Big Sur dropped support 10,x and older)
+  - MacBookPro9,2
 
 - Open `Config.plist`, find PlatformInfo >> Generic
 
@@ -189,6 +156,15 @@ If you are using different model and alternative kext from Other folder does not
 
 </details>
 
+<details>
+<summary><strong>Use middle trackpoint button for scrolling</strong></summary>
+
+- Download [Smart Scroll for macOS](https://www.marcmoini.com/sx_en.html)
+- Install for all users
+- Enable the `don't move cursor when scrolling` option
+
+</details>
+
 ## Status
 
 <details>
@@ -208,6 +184,7 @@ If you are using different model and alternative kext from Other folder does not
 - [x] Touchpad `1-4 fingers swipe works`
 - [x] TrackPoint  `Works perfectly. Just like on Windows or Linux`
 - [x] eGPU  (Thanks [lese9855](https://github.com/lese9855) have confirmed it [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
+- [x] Brightness keys `In most configs your max brightness in macOS won't be the max brightness of the panel, this is fixed here`
 
 </details>
 
@@ -223,13 +200,11 @@ If you are using different model and alternative kext from Other folder does not
 
 <details>
 
-<summary><strong>Bug tracker :heavy_exclamation_mark:</strong></summary>
-
-- [ ] Trackpoint not working after wake from sleep
-
-</details>
-
 ## Credits
+
+[banhbaoxamlan](https://github.com/banhbaoxamlan) for the original x230 EFI
+
+[SkyrilHD](https://github.com/SkyrilHD) for explaining OpenCore specifics to me
 
 [Apple](https://www.apple.com) for macOS
 
